@@ -1,0 +1,65 @@
+/* ///////////////// */
+/* /// Main Page /// */
+/* ///////////////// */
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+.container > .section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px 100px 50px;
+}
+
+.container > .section > h2 {
+  margin: 30px 0 20px;
+  font-size: 20pt;
+}
+
+.container > .section > p {
+  text-align: center;
+}
+
+.container > .section-home {
+  padding-top: 100px;
+  background-color: #222222;
+}
+
+.container > .section-home > .wrap-profile-image {
+  width: 400px;
+}
+
+.container > .section-home > h2,
+.container > .section-home > p {
+  color: #ffffff;
+}
+
+.container > .section-about > .wrap-box-about {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.container > .section-about > .wrap-box-about > .box-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 30%;
+  height: 300px;
+  margin: 50px 20px 0;
+  background-color: #222222;
+  border-radius: 20px;
+}
+
+.container > .section-about > .wrap-box-about > .box-about > h3 {
+  margin: 40px 0 10px;
+  color: #ffffff;
+  font-size: 16pt;
+}
+
+.container > .section-about > .wrap-box-about > .box-about > p {
+  color: #ffffff;
+}
