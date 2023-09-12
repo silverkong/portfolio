@@ -1,0 +1,70 @@
+.container > .section-work {
+  background-color: #222222;
+}
+
+.container > .section-work > h2 {
+  color: #ffffff;
+}
+
+.container > .section-work > .wrap-box-work {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container > .section-work > .wrap-box-work > .box-work {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.container > .section-work > .wrap-box-work > .box-work > .img-work {
+  width: 100%;
+}
+
+.container > .section-work > .wrap-box-work > .box-work > .box-work-content {
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  height: 300px;
+  padding: 40px;
+  background-color: #2222228b;
+  text-align: center;
+  opacity: 0;
+}
+
+.container
+  > .section-work
+  > .wrap-box-work
+  > .box-work
+  > .box-work-content:hover {
+  opacity: 1;
+}
+
+.container
+  > .section-work
+  > .wrap-box-work
+  > .box-work
+  > .box-work-content
+  > h3 {
+  margin-bottom: 20px;
+  color: #ffffff;
+  font-size: 18pt;
+  font-weight: 700;
+}
+
+.container
+  > .section-work
+  > .wrap-box-work
+  > .box-work
+  > .box-work-content
+  > p {
+  color: #f2f2f2;
+}

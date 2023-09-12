@@ -1,0 +1,30 @@
+.container > .section-about > .wrap-box-about {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100%;
+}
+
+.container > .section-about > .wrap-box-about > .box-about {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 500px;
+  height: 300px;
+  margin: 50px 20px 0;
+  padding: 50px;
+  background-color: #222222;
+  border-radius: 20px;
+  text-align: center;
+}
+
+.container > .section-about > .wrap-box-about > .box-about > h3 {
+  margin: 40px 0 10px;
+  color: #ffffff;
+  font-size: 16pt;
+}
+
+.container > .section-about > .wrap-box-about > .box-about > p {
+  color: #dddddd;
+}

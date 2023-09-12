@@ -1,22 +1,45 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../css/pages/MainPage.css";
 
-//////////////////
-// font awesome //
-//////////////////
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faServer } from "@fortawesome/free-solid-svg-icons";
-import { faReact } from "@fortawesome/free-brands-svg-icons";
+///////////////////////
+// import components //
+///////////////////////
+import TextMain from "../components/TextMain";
+import BoxAbout from "../components/BoxAbout";
+import BoxWork from "../components/BoxWork";
 
 //////////////////
 // import image //
 //////////////////
 import ImgProfile from "../images/img_profile.png";
 
-// CSS Name
-// 형태-의미-순서_상태로 작성
+//////////////////
+// font awesome //
+//////////////////
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
-const MainPage = () => {
+const MainPage = ({ aboutRef, workRef, contactRef }) => {
+  // 스크롤 위치 받아올 State
+  const [scrollValue, setScrollValue] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollValue(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  // top으로 이동
+  const goToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+  };
+
   return (
     <main className="container">
       {/* HOME */}
@@ -24,11 +47,15 @@ const MainPage = () => {
         <div className="wrap-profile-image">
           <img src={ImgProfile} alt="profile" />
         </div>
-        <h2>Hello !</h2>
-        <p>blah blah</p>
+        <TextMain />
+        <p>
+          Full-Stack Development Track at MultiCampus
+          <br />
+          Blockchain Valley Development Member
+        </p>
       </section>
       {/* ABOUT */}
-      <section className="section section-about">
+      <section className="section section-about" ref={aboutRef}>
         <h2>About me</h2>
         <p>
           I am studying to transition from a designer to a developer.
@@ -38,31 +65,25 @@ const MainPage = () => {
           <br />
           Currently, I am also studying Web3 and blockchain with great interest.
         </p>
-        <div className="wrap-box-about">
-          <div className="box-about">
-            <FontAwesomeIcon icon={faReact} size="6x" color="#ffffff" />
-            <h3>Front-End</h3>
-            <p>React / Redux / JavaScript / HTML / CSS</p>
-          </div>
-          <div className="box-about">
-            <FontAwesomeIcon icon={faServer} size="6x" color="#ffffff" />
-            <h3>Back-End</h3>
-            <p>Java / MySQL / Spring Boot</p>
-          </div>
-        </div>
+        <BoxAbout />
       </section>
-      {/* WORKS */}
-      <section className="section">
+      {/* WORK */}
+      <section className="section section-work" ref={workRef}>
         <h2>My work</h2>
-        <p>blah blah</p>
+        <BoxWork />
       </section>
       {/* CONTACT */}
-      <section className="section">
+      <section className="section section-contact" ref={contactRef}>
         <h2>Contact</h2>
-        <p>contact</p>
+        <p>jungeb325@gmail.com</p>
+        <a href="https://github.com/silverkong" target="blank">
+          <FontAwesomeIcon icon={faGithub} color="#222222" size="3x" />
+        </a>
       </section>
-      {/* Top */}
-      <aside></aside>
+      {/* Top Button */}
+      <aside className={scrollValue > 300 ? "dp-block" : ""} onClick={goToTop}>
+        <FontAwesomeIcon icon={faArrowUp} color="#ffe1a9" size="2x" />
+      </aside>
     </main>
   );
 };

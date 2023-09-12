@@ -24,3 +24,8 @@
   font-size: 12pt;
   line-height: 16pt;
 }
+
+footer {
+  padding: 50px;
+  text-align: center;
+}

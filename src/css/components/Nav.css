@@ -6,9 +6,14 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  height: 100px;
+  height: 110px;
   padding: 10px 100px 0;
+  background-color: #222222;
   z-index: 1;
+}
+
+.header-white {
+  background-color: #ffffff;
 }
 
 .header > .btn-main {
@@ -18,8 +23,20 @@
   cursor: pointer;
 }
 
+.header-white > .btn-main {
+  color: #222222;
+}
+
 .gnb {
   width: 400px;
+}
+
+.burger {
+  display: none;
+}
+
+.burger input {
+  display: none;
 }
 
 .gnb > ul {
@@ -35,6 +52,111 @@
   cursor: pointer;
 }
 
+.header-white > .gnb > ul > li {
+  color: #222222;
+}
+
 .gnb > ul > li:hover {
   font-weight: 600;
+}
+
+@media (max-width: 800px) {
+  .header {
+    padding: 10px 30px;
+  }
+
+  .gnb {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .gnb > ul {
+    display: none;
+  }
+
+  .gnb > ul.gnb-box {
+    position: absolute;
+    top: 109px;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    padding: 20% 0;
+    background-color: #222222;
+    overflow: hidden;
+    touch-action: none;
+  }
+
+  .header-white > .gnb > ul.gnb-box {
+    background-color: #ffffff;
+  }
+
+  .burger {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 25px;
+    height: 18px;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .burger input {
+    display: none;
+  }
+
+  .burger span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background: #ffffff;
+    border-radius: 9px;
+    opacity: 1;
+    left: 0;
+    transform: rotate(0deg);
+    transition: 0.25s ease-in-out;
+  }
+
+  .header-white > .gnb > .burger span {
+    background: #222222;
+  }
+
+  .burger span:nth-of-type(1) {
+    top: 0px;
+    transform-origin: left center;
+  }
+
+  .burger span:nth-of-type(2) {
+    top: 50%;
+    transform: translateY(-50%);
+    transform-origin: left center;
+  }
+
+  .burger span:nth-of-type(3) {
+    top: 100%;
+    transform-origin: left center;
+    transform: translateY(-100%);
+  }
+
+  .burger input:checked ~ span:nth-of-type(1) {
+    transform: rotate(45deg);
+    top: 0px;
+    left: 5px;
+  }
+
+  .burger input:checked ~ span:nth-of-type(2) {
+    width: 0%;
+    opacity: 0;
+  }
+
+  .burger input:checked ~ span:nth-of-type(3) {
+    transform: rotate(-45deg);
+    top: 18px;
+    left: 5px;
+  }
 }
