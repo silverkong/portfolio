@@ -29,7 +29,11 @@
 }
 
 .container > .section-home > .wrap-profile-image {
-  width: 400px;
+  width: 350px;
+}
+
+.container > .section-home > .wrap-profile-image > img {
+  width: 90%;
 }
 
 .container > .section-home > h2,
